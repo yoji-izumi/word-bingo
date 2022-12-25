@@ -3,8 +3,8 @@ def check_bingo_for_one_line(one_line_data, words):
     for word in one_line_data:
         if word not in words:
             return False
-        # ビンゴになっている
-        return True
+    # ビンゴになっている
+    return True
 
 
 # 入力されるビンゴカードのサイズを取得(S)
@@ -53,12 +53,12 @@ top_right_to_bottom_left_data = []
 for i in range(matrix_size):
     top_left_to_bottom_right_data.append(card[i][i])
     top_right_to_bottom_left_data.append(card[i][matrix_size - 1 - i])
-    if check_bingo_for_one_line(top_left_to_bottom_right_data, words):
-        print("yes")
-        exit()
-    if check_bingo_for_one_line(top_right_to_bottom_left_data, words):
-        print("yes")
-        exit()
+if check_bingo_for_one_line(top_left_to_bottom_right_data, words):
+    print("yes")
+    exit()
+if check_bingo_for_one_line(top_right_to_bottom_left_data, words):
+    print("yes")
+    exit()
 
 
 print("no")
